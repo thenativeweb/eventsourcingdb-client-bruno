@@ -1,0 +1,15 @@
+meta {
+  name: Verify Store Integrity
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/v1/verify-store
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}

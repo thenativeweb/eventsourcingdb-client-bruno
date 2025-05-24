@@ -1,0 +1,15 @@
+meta {
+  name: Audit History
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/v1/audit-history
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}

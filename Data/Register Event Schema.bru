@@ -1,0 +1,35 @@
+meta {
+  name: Register Event Schema
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/v1/register-event-schema
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}
+
+body:json {
+  {
+    "eventType": "io.eventsourcingdb.library.book-acquired",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "isbn": { "type": "string" }
+      },
+      "required": [
+        "title",
+        "author",
+        "isbn"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

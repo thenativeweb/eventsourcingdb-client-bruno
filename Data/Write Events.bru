@@ -1,0 +1,40 @@
+meta {
+  name: Write Events
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/v1/write-events
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}
+
+body:json {
+  {
+    "events": [
+      {
+        "source": "https://library.eventsourcingdb.io",
+        "subject": "/books/42",
+        "type": "io.eventsourcingdb.library.book-acquired",
+        "data": {
+          "title": "2001 – A Space Odyssey",
+          "author": "Arthur C. Clarke",
+          "isbn": "978-0756906788"
+        }
+      }
+    ],
+    "preconditions": [
+      {
+        "type": "isSubjectPristine",
+        "payload": {
+          "subject": "/books/42"
+        }
+      }
+    ]
+  }
+}

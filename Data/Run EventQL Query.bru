@@ -1,0 +1,21 @@
+meta {
+  name: Run EventQL Query
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/v1/run-eventql-query
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}
+
+body:json {
+  {
+    "query": "FROM e IN events PROJECT INTO e"
+  }
+}

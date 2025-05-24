@@ -1,0 +1,24 @@
+meta {
+  name: Observe Events
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/v1/observe-events
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}
+
+body:json {
+  {
+    "subject": "/",
+    "options": {
+      "recursive": true
+    }
+  }
+}

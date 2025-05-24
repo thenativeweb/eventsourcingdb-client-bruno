@@ -1,0 +1,15 @@
+meta {
+  name: Read Event Types
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/v1/read-event-types
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}

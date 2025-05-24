@@ -1,0 +1,15 @@
+meta {
+  name: Backup
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/api/v1/backup
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Health (OpenMetrics)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/v1/health?format=openmetrics
+  body: none
+  auth: bearer
+}
+
+params:query {
+  format: openmetrics
+}
+
+auth:bearer {
+  token: {{apiToken}}
+}
